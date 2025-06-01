@@ -64,6 +64,11 @@ namespace BuildingBlock
             ref bool shouldAllow)
         {
             ushort id = asset.id;
+            if (loadeddConfig==null)
+            {
+                Unload();
+                return;
+            }
             if (!loadeddConfig.AffectedBarricades.Contains(id))
             {
                 return;
